@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{candidate_name}-{interviewer_name}",
+ "creation": "2024-09-17 23:29:04.587827",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "candidate_name",
+  "interviewer_name",
+  "role_applied",
+  "date",
+  "time",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "candidate_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Candidate Name",
+   "options": "Candidate Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interviewer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Interviewer Name",
+   "options": "Interviewers",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "candidate_name.apply_role",
+   "fieldname": "role_applied",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Role Applied",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Hired\nIn-Progress\nRejected"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-17 23:35:10.760877",
+ "modified_by": "Administrator",
+ "module": "HirePro",
+ "name": "Interviews Schedule",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Hired"
+  },
+  {
+   "color": "Yellow",
+   "title": "In Progress"
+  },
+  {
+   "color": "Red",
+   "title": "Rejected "
+  }
+ ]
+}
